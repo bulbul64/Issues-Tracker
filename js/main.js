@@ -83,11 +83,19 @@ searchInput.addEventListener('input', async () => {
 // Event Listeners and Functions to open modal add
 const myModal = document.getElementById('my_modal_5');
 
-issuesContainer.addEventListener('click', (e) => {
+issuesContainer.addEventListener('click', async (e) => {
   const div = e.target.closest('div[data-id]');
-  if (div) {
-    myModal.innerHTML = openModal();
+  const id = div.dataset.id;
+  const issues = await fetchIssues();
 
+  const issue = issues.find((issue) => issue.id == id);
+  console.log(issue);
+ 
+  const returnedHTML = openModal(issue);
+  if (div) {
+    myModal.innerHTML = returnedHTML;
+    
     myModal.showModal();
+  
   }
 });
