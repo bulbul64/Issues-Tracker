@@ -25,15 +25,11 @@
     />
   </head>
   <body>
-
     <!-- Login Page -->
     <main class="flex items-center justify-center h-screen">
-
-        <!-- Login Form -->
-      <fieldset
-        class="fieldset w-[520px] bg-base-200 border-base-300 rounded-box border shadow-xl p-8"
-      >  
-      <!-- Login Form Header -->
+      <!-- Login Form -->
+      <fieldset class="fieldset w-[520px] border-base-300 rounded-box border shadow-xl p-8">
+        <!-- Login Form Header -->
         <div class="flex justify-center items-center text-center mb-6">
           <div class="flex flex-col items-center">
             <img class="w-24 mb-4" src="assets/github-logo.png" alt="" />
@@ -41,7 +37,7 @@
             <p class="text-base text-gray-500">Sign in to manage your issues</p>
           </div>
         </div>
-       
+
         <!-- Login Form Inputs -->
         <label class="label font-medium mb-1">Username</label>
         <input
@@ -51,7 +47,7 @@
           class="input input-lg mb-4 w-full focus:outline-none"
           placeholder="Enter Username"
         />
-       
+
         <!-- Password -->
         <label class="label font-medium mb-1">Password</label>
         <input
@@ -61,7 +57,7 @@
           class="input w-full mb-4 input-lg focus:outline-none"
           placeholder="Enter Password"
         />
-       
+
         <!--  Login Button -->
         <button
           id="login-btn"
@@ -69,9 +65,23 @@
         >
           Sign In
         </button>
+        <div class="flex items-center gap-3 my-6">
+          <div class="flex-1 h-px bg-gray-300"></div>
+          <span class="text-gray-500 text-sm">OR</span>
+          <div class="flex-1 h-px bg-gray-300"></div>
+        </div>
+
+        <div class="w-full mx-auto p-3">
+          <h6 class="text-center">Demo Credentials:</h6>
+
+          <div class="p-3 text-center w-full bg-[#F8FAFC]">
+            <h6><span class="font-semibold">Username:</span> admin</h6>
+            <h6><span class="font-semibold">Password:</span> admin123</h6>
+          </div>
+        </div>
       </fieldset>
     </main>
-   
+
     <!-- Login Page JS -->
     <script type="module" src="js/login.js"></script>
   </body>
