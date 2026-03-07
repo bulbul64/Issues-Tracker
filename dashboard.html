@@ -29,6 +29,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!-- custom css link -->
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <!-- Navbar -->
@@ -39,17 +42,23 @@
           <h2 class="text-2xl font-semibold">GitHub Issues Tracker</h2>
         </div>
         <div class="flex gap-2">
-          <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
-          <button class="btn btn-primary">+ New Issue</button>
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Search"
+            class="input input-bordered w-24 md:w-auto"
+          />
+          <button id="search-btn" class="btn btn-primary">+ New Issue</button>
         </div>
       </div>
     </header>
     <main>
+      <!-- btns section -->
       <section class="flex container mx-auto justify-center mt-16">
         <div class="p-6 shadow-lg w-full rounded-lg flex gap-2">
-          <button class="btn btn-primary px-10">All</button>
-          <button class="btn px-10">Open</button>
-          <button class="btn px-10">Closed</button>
+          <button id="all-btn" class="btn btn-primary px-10">All</button>
+          <button id="open-btn" class="btn px-10">Open</button>
+          <button id="closed-btn" class="btn px-10">Closed</button>
         </div>
       </section>
 
@@ -61,7 +70,7 @@
                 <img class="w-8" src="assets/Aperture.png" alt="" />
               </div>
               <div>
-                <h2 class="text-2xl font-semibold">50 Issues</h2>
+                <h2 class="text-2xl font-semibold"><span id="count">0</span> Issues</h2>
                 <p class="text-gray-500">Try creating one</p>
               </div>
             </div>
@@ -78,49 +87,29 @@
           </div>
         </section>
 
-        <section class="flex container mx-auto justify-center p-6">
-          <div class="xl:grid grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 w-full">
+        <section>
+          <!-- Open the modal using ID.showModal() method -->
+
+          <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle"></dialog>
+        </section>
+
+        <!--  Issues Container -->
+        <section class="flex flex-col container mx-auto justify-center p-6">
+          <section
+            id="loading"
+            class="flex container mx-auto justify-center p-6 col-span-full"
+          ></section>
+          <div
+            id="issues-container"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4"
+          >
             <!-- Issue Card -->
-            <div class="max-w-xs border-t-4 border-[#00A96E] rounded-lg shadow-lg">
-              <!-- Issue Card header -->
-              <div class="flex items-center justify-between mb-3 px-4 mt-3">
-                <div class="img">
-                  <img class="w-8" src="assets/Open-Status.png" alt="" />
-                </div>
-                <div class="bg-[#FEECEC] w-20 flex justify-center items-center rounded-full p-1">
-                  <h4 class="font-medium text-sm text-red-500">High</h4>
-                </div>
-              </div>
-
-              <!-- Issue Card Body -->
-              <div class="px-4">
-                <h2 class="font-semibold text-lg">Fix navigation menu on mobile devices</h2>
-                <p class="text-sm text-gray-500 my-2 leading-relaxed">
-                  The navigation menu doesn't collapse properly on mobile devices...
-                </p>
-                <div class="mt-3 gap-2">
-                  <button class="btn btn-outline btn-error">
-                    <i class="fa-solid fa-bug"></i> Bug
-                  </button>
-                  <button class="btn btn-outline btn-warning">
-                    <i class="fa-solid fa-life-ring"></i> Help Wanted
-                  </button>
-                </div>
-              </div>
-
-              <!-- Issue Card Footer -->
-              <div class="flex justify-between items-center pt-3 border-t mt-5 px-4">
-                <p>created At:</p>
-                <p>1/15/2024</p>
-              </div>
-              <div class="flex justify-between items-center px-4 pb-4">
-                <p>updated At:</p>
-                <p>1/15/2024</p>
-              </div>
-            </div>
           </div>
         </section>
       </section>
     </main>
+
+    <!-- Dashboard JS -->
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
