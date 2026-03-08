@@ -39,7 +39,7 @@
       <div class="navbar bg-base-100 shadow-sm flex justify-between">
         <div class="flex gap-2 items-center">
           <div class="w-9"><img src="assets/github-logo.png" class="w-full" alt="logo png" /></div>
-          <h2 class="text-2xl font-semibold">GitHub Issues Tracker</h2>
+          <h2 class="text-2xl font-semibold hidden md:block">GitHub Issues Tracker</h2>
         </div>
         <div class="flex gap-2">
           <input
@@ -55,8 +55,8 @@
     <main>
       <!-- btns section -->
       <section class="flex container mx-auto justify-center mt-16">
-        <div class="p-6 shadow-lg w-full rounded-lg flex gap-2">
-          <button id="all-btn" class="btn btn-primary px-10">All</button>
+        <div class="md:p-6 p-2 shadow-lg w-full rounded-lg flex gap-2">
+          <button id="all-btn" class="btn btn-primary sm:px-10 px-6">All</button>
           <button id="open-btn" class="btn px-10">Open</button>
           <button id="closed-btn" class="btn px-10">Closed</button>
         </div>
@@ -94,7 +94,7 @@
         </section>
 
         <!--  Issues Container -->
-        <section class="flex flex-col container mx-auto justify-center p-6">
+        <section class="flex flex-col container mx-auto justify-center md:p-6 p-4">
           <section
             id="loading"
             class="flex container mx-auto justify-center p-6 col-span-full"

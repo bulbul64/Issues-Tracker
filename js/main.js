@@ -78,6 +78,9 @@ searchInput.addEventListener('input', async () => {
   loading(false);
 });
 
+const arr = [1, 2, 3, 4,]
+
+
 
 
 // Event Listeners and Functions to open modal add
